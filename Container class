@@ -1,0 +1,21 @@
+Container(
+  constraints: BoxConstraints.expand(//configura para ajustar al tamaño de fuente mas amplio margen vertical, mientras se expande
+                                     //hoizontalmente para adaptarse al tamaño de fuente mas amplio margen vertical,
+                                     //mientras se expande horizontalmente para adpatse al padre.
+    height: Theme.of(context).textTheme.display1.fontSize * 1.1 + 200.0,
+  ),
+  padding: const EdgeInsets.all(8.0),//se asegura de que haya espacio entre el contenido y el texto
+  color: Colors.teal.shade700,
+  alignment: Alignment.center,// se alinee que el niño se centre,bottomCenter.bottomLeft.bottomRigh
+                               // center, centerLeft, centerRight
+                               //topCenter , topLeft, topRight
+                              
+  child: Text('Hello World', style: Theme.of(context).textTheme.display1.copyWith(color: Colors.white)),
+  foregroundDecoration: BoxDecoration(
+    image: DecorationImage(
+      image: NetworkImage('https://www.example.com/images/frame.png'),
+      centerSlice: Rect.fromLTRB(270.0, 180.0, 1360.0, 730.0),
+    ),
+  ),
+  transform: Matrix4.rotationZ(0.1),//aplica una ligera rotacion a todo el artilugiio para completar el efecto.  
+)
