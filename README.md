@@ -1,2 +1,8 @@
-# Flutter
-Begginer- intermediate - advanced of flutter.
+# nciole_app3
+
+A new Flutter application.
+
+## Getting Started
+
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).
