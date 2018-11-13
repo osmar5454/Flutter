@@ -65,6 +65,7 @@ class ThirdPage extends StatelessWidget {
                   //Primero
 
                   Container(
+                    margin: EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                     alignment: Alignment(-1.0, 0.0),
                     child: IconButton(icon: Icon(Icons.arrow_back, color: Colors.white), onPressed: (){
                       Navigator.of(context).pushNamed('/FirstPage');
