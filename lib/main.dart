@@ -23,7 +23,7 @@ class QuickView extends StatelessWidget{
       routes: <String , WidgetBuilder>{
         '/SecondPage' : (BuildContext context) => new SecondPage(),
         '/FirstPage' : (BuildContext context) => new HomePage(),
-        '/ThirdPage' : (BuildContext context) => new ThirdPage()
+        '/ThirdPage' : (BuildContext context) => new ThirdPage(),
       },
     );
   }

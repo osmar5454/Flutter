@@ -54,7 +54,7 @@ class ThirdPage extends StatelessWidget {
                 children: <Widget>[
                   //Primero
                   Container(
-                    alignment: Alignment(0.0, 5.0),
+                    alignment: Alignment(0.0, 7.0),
                     height: 100.0,
                     color: Colors.transparent,
                     child: Text(
@@ -79,16 +79,11 @@ class ThirdPage extends StatelessWidget {
                       Navigator.of(context).pushNamed('/SecondPage');
                     },
                     child: Container(
-                      margin: EdgeInsets.fromLTRB(25.0, 290.0, 25.0, 0.0),
+                      margin: EdgeInsets.fromLTRB(25.0, 320.0, 25.0, 0.0),
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.blueGrey.shade500.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(20.0),
-                          boxShadow: [
-                            BoxShadow(
-                                blurRadius: 12.0,
-                                color: Colors.grey
-                            )
-                          ]
+
                       ),
 
                       child: Column(
@@ -102,7 +97,7 @@ class ThirdPage extends StatelessWidget {
                                 child: Text(
                                   'ALEATORIO',
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontFamily: 'Raleway',
                                       fontWeight: FontWeight.w600,
                                       fontSize: 20.0
@@ -111,8 +106,8 @@ class ThirdPage extends StatelessWidget {
                               ),
 
                               Container(
-                                padding: EdgeInsets.fromLTRB(315.0, 2.0, 5.0, 5.0),
-                                child: Icon(Icons.offline_bolt , color : Colors.black),
+                                padding: EdgeInsets.fromLTRB(315.0, 5.0, 5.0, 5.0),
+                                child: Icon(Icons.offline_bolt , color : Colors.cyan[150]),
                               ),
 
                               Container(
@@ -122,9 +117,9 @@ class ThirdPage extends StatelessWidget {
                                     Text(
                                       'Escoge los cursos que deseees',
                                       style: TextStyle(
-                                          color: Colors.grey[400],
+                                          color: Colors.white,
                                           fontFamily: 'Raleway',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           fontSize: 14.0
                                       ),
                                     ),
@@ -139,9 +134,9 @@ class ThirdPage extends StatelessWidget {
                                     Text(
                                       'sin necesidad de escoger las secciones.',
                                       style: TextStyle(
-                                          color: Colors.grey[400],
+                                          color: Colors.white,
                                           fontFamily: 'Raleway',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           fontSize: 14.0
                                       ),
                                     ),
@@ -166,30 +161,24 @@ class ThirdPage extends StatelessWidget {
                     },
                     child: //Boton de CHOOSE
                     Container(
-                      margin: EdgeInsets.fromLTRB(25.0, 390.0, 25.0, 0.0),
+                      margin: EdgeInsets.fromLTRB(25.0, 420.0, 25.0, 0.0),
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.blueGrey.shade500.withOpacity(0.5),
                           borderRadius: BorderRadius.circular(20.0),
-                          boxShadow: [
-                            BoxShadow(
-                                blurRadius: 12.0,
-                                color: Colors.grey
-                            )
-                          ]
+
                       ),
 
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Stack(
+                          Row(
                             children: <Widget>[
-
                               Container(
-                                padding: EdgeInsets.fromLTRB(25.0, 5.0, 5.0, 5.0),
+                                padding: EdgeInsets.fromLTRB(25.0, 10.0, 5.0, 0.0),
                                 child: Text(
                                   'ELIGE',
                                   style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Colors.white,
                                       fontFamily: 'Raleway',
                                       fontWeight: FontWeight.w600,
                                       fontSize: 20.0
@@ -198,48 +187,28 @@ class ThirdPage extends StatelessWidget {
                               ),
 
                               Container(
-                                padding: EdgeInsets.fromLTRB(315.0, 2.0, 5.0, 5.0),
-                                child: Icon(Icons.mode_edit , color : Colors.black),
+                                padding: EdgeInsets.fromLTRB(230.0, 5.0, 5.0, 0.0),
+                                child: Icon(Icons.mode_edit , color : Colors.cyan[150]),
                               ),
-
-                              Container(
-                                padding: EdgeInsets.fromLTRB(25.0, 35.0, 5.0, 5.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Text(
-                                      'Escoge los cursos que desees',
-                                      style: TextStyle(
-                                          color: Colors.grey[400],
-                                          fontFamily: 'Raleway',
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14.0
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              Container(
-                                padding: EdgeInsets.fromLTRB(25.0, 50.0, 5.0, 5.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Text(
-                                      'incluyendo las secciones de los cursos.',
-                                      style: TextStyle(
-                                          color: Colors.grey[400],
-                                          fontFamily: 'Raleway',
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14.0
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
-
-
-
                             ],
-                          )
+                          ),
+
+                          SizedBox(height: 3.0,),
+                          Container(
+                                padding: EdgeInsets.fromLTRB(25.0, 8.0, 5.0, 5.0),
+                                child:
+                                    Text(
+                                      'Escoge los cursos que desees incluyendo las secciones de los cursos.',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontFamily: 'Raleway',
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14.0
+                                      ),
+                                    ),
+                          ),
+
+
                         ],
                       ),
                     ),
