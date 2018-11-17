@@ -9,9 +9,6 @@ class _DialogsState extends State<Dialog>{
 
   MINIDialogs mini = new MINIDialogs();
 
-
-
-
   Text data = new Text(
     '\n\nProfesor     Romano Lopez\n'
         'Dias             L-M-V\n'
@@ -23,6 +20,7 @@ class _DialogsState extends State<Dialog>{
       color: Colors.black
     ),
   );
+  Cartas cartas = new Cartas();
 
   @override
   Widget build(BuildContext context) {
@@ -33,67 +31,12 @@ class _DialogsState extends State<Dialog>{
         child: new Column(
           children: <Widget>[
 
+            cartas.Construir(context, data ,'X'),
+            cartas.Construir(context, data ,'Y'),
+            cartas.Construir(context, data ,'W'),
 
-            new Card(
-              child: new Container(
-                height: 50.0,
-                child: new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
 
-                    Text(' Seccion X ',
-                  style: TextStyle(
-                      fontFamily: 'Raleway',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20.0
-                  ),),
-                    new IconButton(icon: new Icon(Icons.accessibility,color: Colors.redAccent,), onPressed: () {
-                      mini.information(context, 'Seccion X', data , 'Seccion X');
-                    },)
-                  ],
-                ),
-              ),
-            ),
-            new Card(
-              child: new Container(
-                height: 50.0,
-                child: new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
 
-                    Text(' Seccion Y ',
-                      style: TextStyle(
-                          fontFamily: 'Raleway',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20.0
-                      ),),
-                    new IconButton(icon: new Icon(Icons.accessibility,color: Colors.redAccent,), onPressed: () {
-                      mini.information(context, 'Seccion Y', data , 'Seccion Y');
-                    },)
-                  ],
-                ),
-              ),
-            ),
-            new Card(
-              child: new Container(
-                height: 50.0,
-                child: new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-
-                    Text(' Seccion W ',
-                      style: TextStyle(
-                          fontFamily: 'Raleway',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20.0
-                      ),),
-                    new IconButton(icon: new Icon(Icons.accessibility,color: Colors.redAccent,), onPressed: () {
-                      mini.information(context, 'Seccion W', data, 'Seccion W' );
-                    },)
-                  ],
-                ),
-              ),
-            ),
 //------------------------------------------------------------------------------------------------------------
 
 
@@ -110,17 +53,6 @@ class _DialogsState extends State<Dialog>{
 
 
 class MINIDialogs{
-
-  void showInSnackBar(String value,String seccion ) {
-    if(value.isEmpty) return;
-    scaffoldState.currentState.showSnackBar(new SnackBar(
-      content: new Text('Has añadido a ${seccion}'),
-    ));
-  }
-  final GlobalKey<ScaffoldState> scaffoldState = new GlobalKey();
-
-
-
   information(BuildContext context ,String title ,Text content , String seccion){
     return showDialog(
         context: context,
@@ -145,12 +77,17 @@ class MINIDialogs{
             actions: <Widget>[
               FlatButton(
                   onPressed: () {
-                    showInSnackBar('', seccion);
+
                     Navigator.pop(context);
-
-
                   },
-                  child: Icon(Icons.favorite ,color: Colors.deepPurpleAccent,)
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Icon(Icons.favorite ,color: Colors.deepPurpleAccent,),
+                      SizedBox(width: 200.0,),
+                      Icon(Icons.keyboard_return ,color: Colors.deepPurpleAccent,)
+                    ],
+                  )
               ),
             ],
           );
@@ -158,7 +95,6 @@ class MINIDialogs{
     );
   }
 }
-
 
 
 class Dialogs{
@@ -208,4 +144,46 @@ class Dialogs{
       }
     );
   }
+}
+
+class Cartas{
+
+  MINIDialogs mini = new MINIDialogs();
+
+  Construir(BuildContext context , Text data ,String seccion ){
+    return new Card(
+      child: new Container(
+        height: 50.0,
+        child: new Row(
+          children: <Widget>[
+
+
+            GestureDetector(
+              onTap: (){
+                mini.information(context, 'Seccion ${seccion}', data , 'Seccion ${seccion}');
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(' Seccion ${seccion}',
+                    style: TextStyle(
+                        fontFamily: 'Raleway',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20.0
+                    ),),
+                  SizedBox(
+                    width: 108.0,
+                  ),
+                  new IconButton(icon: new Icon(Icons.accessibility,color: Colors.redAccent,), onPressed: null,)
+                ],
+              ),
+            ),
+
+
+          ],
+        ),
+      ),
+    );
+  }
+
 }

@@ -19,7 +19,7 @@ class _Ciclo2State extends State<Ciclo2> {
             Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('images/ciclo2.jpg'),
+                      image: AssetImage('images/deadpool.jpg'),
                       fit: BoxFit.cover
                   )
 
@@ -186,7 +186,7 @@ class _Ciclo2State extends State<Ciclo2> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
                             image: DecorationImage(
-                                image: AssetImage('images/ciclo2.jpg'),
+                                image: AssetImage('images/deadpool.jpg'),
                                 fit: BoxFit.cover),
                             color: Colors.black,
                             boxShadow: [
@@ -206,7 +206,7 @@ class _Ciclo2State extends State<Ciclo2> {
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18.0),
-                            color: Colors.lightGreenAccent
+                            color: Colors.greenAccent
                         ),
                         width: 160.0,
                         height: 50.0,

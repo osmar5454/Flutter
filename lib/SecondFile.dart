@@ -49,7 +49,7 @@ class _MyHomePageState extends State<SecondPage> {
                 Container(
                   decoration: BoxDecoration(
                       image: new DecorationImage(
-                        image:AssetImage('images/ciclo7.jpg'),
+                        image:AssetImage('images/deadpool.jpg'),
                         fit: BoxFit.cover,
                       )
                   ),
@@ -155,39 +155,46 @@ class _MyHomePageState extends State<SecondPage> {
                         )
                       ],
                     ),
+                    SizedBox(height: 10.0,),
+                    
+                    Container(
+                      child: Center(
+                        child: Icon(Icons.compare_arrows , size: 40.0,color: Colors.yellow,),
+                      ),
+                    ),
 
 
                     Container(
-                        padding: EdgeInsets.fromLTRB(0.0, 0.0, 20.0, 40.0),
+                        padding: EdgeInsets.fromLTRB(0.0, 0.0, 20.0, 20.0),
                         child: Stack(//sobreposicionamiento
                           overflow: Overflow.visible,
                           children: <Widget>[
 
                             Container(
-                              height: 543.0,
+                              height: 503.0,
                               child: ListView(
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
-                                  _foodCard('1','images/ciclo1.jpg',Ciclo1()),
+                                  _foodCard('1','images/deadpool.jpg',Ciclo1()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('2','images/ciclo2.jpg',Ciclo2()),
+                                  _foodCard('2','images/deadpool.jpg',Ciclo2()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('3','images/ciclo3.jpg',Ciclo3()),
+                                  _foodCard('3','images/deadpool.jpg',Ciclo3()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('4','images/ciclo4.jpg',Ciclo4()),
+                                  _foodCard('4','images/deadpool.jpg',Ciclo4()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('5','images/ciclo5.jpg',Ciclo5()),
+                                  _foodCard('5','images/deadpool.jpg',Ciclo5()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('6','images/ciclo6.jpg',Ciclo6()),
+                                  _foodCard('6','images/deadpool.jpg',Ciclo6()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('7','images/ciclo7.jpg',Ciclo7()),
+                                  _foodCard('7','images/deadpool.jpg',Ciclo7()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('8','images/ciclo8.jpg',Ciclo8()),
+                                  _foodCard('8','images/deadpool.jpg',Ciclo8()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('9','images/ciclo9.jpg',Ciclo9()),
+                                  _foodCard('9','images/deadpool.jpg',Ciclo9()),
                                   SizedBox(width: 5.0,),
-                                  _foodCard('10','images/ciclo10.jpg',Ciclo10())
+                                  _foodCard('10','images/deadpool.jpg',Ciclo10())
                                 ],
                               ),
                             )
@@ -199,8 +206,27 @@ class _MyHomePageState extends State<SecondPage> {
 
                     FloatingActionButton(
                       backgroundColor: Colors.yellow,
-                      onPressed: null,
-                      child: Icon(Icons.add,color: Colors.black,),
+                      onPressed: (){
+                        showDialog(
+                            context:context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context){
+                              return AlertDialog(
+                                content: Container(
+                                    height: 80.0,
+                                    width: 80.0,
+                                    child: Center(
+                                      child: Container(
+
+                                        child: Text('Aqui van los cursos',style: TextStyle(fontFamily: 'Raleway',fontWeight: FontWeight.w500,color: Colors.black),),
+                                      )
+                                      ,)
+                                ),
+                              );
+                          }
+                        );
+                      },
+                      child: Icon(Icons.build,color: Colors.black,size: 20.0,),
                     )
 
                   ],
@@ -224,7 +250,7 @@ class _MyHomePageState extends State<SecondPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                padding: EdgeInsets.fromLTRB(55.0, 30.0, 15.0, 40.0),
+                padding: EdgeInsets.fromLTRB(55.0, 0.0, 15.0, 20.0),
                 child: Stack(
                   overflow: Overflow.visible,
                   children: <Widget>[
@@ -235,9 +261,9 @@ class _MyHomePageState extends State<SecondPage> {
                       },
 
                       child: Container(
-                        margin: EdgeInsets.only(top: 70.0),
+                        margin: EdgeInsets.only(top: 20.0),
                         width: 300.0,
-                        height: 400.0,
+                        height: 450.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
                             image: DecorationImage(

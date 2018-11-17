@@ -13,7 +13,7 @@ class QuickView3 extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: ThirdPage(),
       routes: <String , WidgetBuilder>{
-        '/FirstPage' : (BuildContext context) => new HomePage(),
+
         '/SecondPage' : (BuildContext context) => new SecondPage(),
 
       },
@@ -64,13 +64,6 @@ class ThirdPage extends StatelessWidget {
                   ),
                   //Primero
 
-                  Container(
-                    margin: EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
-                    alignment: Alignment(-1.0, 0.0),
-                    child: IconButton(icon: Icon(Icons.arrow_back, color: Colors.white), onPressed: (){
-                      Navigator.of(context).pushNamed('/FirstPage');
-                    }),
-                  ),
 
 
                   //Boton de ALEATORIO
