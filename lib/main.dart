@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:nciole_app3/SecondFile.dart';
+import 'package:nicole_app3/SecondFile.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:nciole_app3/ThirdPage.dart';
+import 'package:nicole_app3/ThirdPage.dart';
 
 
-
+//Funcion que hace referencia a SplashScreen
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -18,7 +18,7 @@ void main(){
   ));
 }
 
-
+//Funcion que hace referencia a SplashScreenState
 class SplashScreen extends StatefulWidget{
   @override
   SplashScreenState createState() => new SplashScreenState();
@@ -26,10 +26,10 @@ class SplashScreen extends StatefulWidget{
 
 class SplashScreenState extends State<SplashScreen>{
   startTime() async {
-    var duration = new Duration(seconds : 3);
+    var duration = new Duration(seconds : 2);
     return new Timer(duration, navigationPage);
   }
-   void navigationPage (){
+   void navigationPage (){//Funcion para ir a la pagina de Aleatorio y Elegir
     Navigator.of(context).pushReplacementNamed('/HomeScreen');
    }
   @override

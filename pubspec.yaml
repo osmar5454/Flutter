@@ -1,4 +1,4 @@
-name: nciole_app3
+name: nicole_app3
 description: A new Flutter application.
 
 # The following defines the version and build number for your application.
@@ -38,25 +38,16 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - images/vuelo.png
-   - images/maths.jpg
-   - images/simbolo.png
-   - images/girl.jpeg
-   - images/integral.jpg
-   - images/integral.png
-   - images/integral2.png
-   - images/base de datos.png
-   - images/computadora.png
-   - images/inteligencia artificial.png
-   - images/iot.png
-   - images/libros.png
-   - images/candado2.png
-   - images/cerebro.png
-   - images/google cloud.png
-   - images/nube.png
-   - images/nube2.png
-   - images/nanami.jpg
+   - images/deadpool.jpg
+   - images/algoritmos.jpg
    - images/pantalla2.jpg
+   - images/gota.jpg
+   - gifs/app2.gif
+   - gifs/kirby.png
+   - gifs/kirby.gif
+   - gifs/kirby2.gif
+
+
 
   #  - images/a_dot_ham.jpeg
 

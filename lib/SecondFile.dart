@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:nciole_app3/Ciclo1.dart';
-import 'package:nciole_app3/Ciclo10.dart';
-import 'package:nciole_app3/Ciclo2.dart';
-import 'package:nciole_app3/Ciclo3.dart';
-import 'package:nciole_app3/Ciclo4.dart';
-import 'package:nciole_app3/Ciclo5.dart';
-import 'package:nciole_app3/Ciclo6.dart';
-import 'package:nciole_app3/Ciclo7.dart';
-import 'package:nciole_app3/Ciclo8.dart';
-import 'package:nciole_app3/Ciclo9.dart';
+import 'package:nicole_app3/Ciclo1.dart';
+import 'package:nicole_app3/Ciclo10.dart';
+import 'package:nicole_app3/Ciclo2.dart';
+import 'package:nicole_app3/Ciclo3.dart';
+import 'package:nicole_app3/Ciclo4.dart';
+import 'package:nicole_app3/Ciclo5.dart';
+import 'package:nicole_app3/Ciclo6.dart';
+import 'package:nicole_app3/Ciclo7.dart';
+import 'package:nicole_app3/Ciclo8.dart';
+import 'package:nicole_app3/Ciclo9.dart';
+import 'package:nicole_app3/Dialogs.dart';
 import 'dart:ui';
-import 'package:nciole_app3/main.dart';
+import 'package:nicole_app3/main.dart';
 
 class SecondPage extends StatefulWidget {
 
@@ -20,23 +21,6 @@ class SecondPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<SecondPage> {
-
-  bool _isFavorito = true;
-  bool _alredy = true ;
-
-  void _toggleFavorite(bool _isfavorito , color){
-    setState((){
-      if(_isFavorito){
-        _isFavorito =false;
-        _alredy = false ;
-      }
-      else{
-        _isFavorito=true;
-        _alredy = true;
-      }
-    });
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -75,39 +59,26 @@ class _MyHomePageState extends State<SecondPage> {
                           children: <Widget>[
                             IconButton(
                               icon: Icon(Icons.arrow_back_ios),
-                              color: Colors.cyan[150],
+                              color: Colors.cyan,
 
                               onPressed: () {
-                                Navigator.of(context).pushNamed('/ThirdPage');
+                                Navigator.pop(context);
                               },
                             ),
                             SizedBox(width: 115.0,),
 
                             Text(
-                                'COMBINA',
+                                'Combina',
                                 style: TextStyle(
                                     fontFamily: 'Raleway',
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.cyan[150],
-                                    fontSize: 20.0
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.amberAccent,
+                                    fontSize: 23.0
                                 )
                             ),
 
                             SizedBox(width: 90.0,),
 
-                            IconButton(
-                              icon: Icon(
-                                _isFavorito ? Icons.favorite_border : Icons.favorite,
-                                color: _alredy ? Colors.cyan[150] : Colors.redAccent,
-                                textDirection: TextDirection.ltr,
-                                size: 40.0,
-                              ),
-
-                              onPressed: (){
-                                _toggleFavorite(_isFavorito , _alredy);
-
-                              },
-                            )
                           ],
                         ),
 
@@ -155,13 +126,9 @@ class _MyHomePageState extends State<SecondPage> {
                         )
                       ],
                     ),
-                    SizedBox(height: 10.0,),
+                    SizedBox(height: 25.0,),
                     
-                    Container(
-                      child: Center(
-                        child: Icon(Icons.compare_arrows , size: 40.0,color: Colors.yellow,),
-                      ),
-                    ),
+
 
 
                     Container(
@@ -171,7 +138,7 @@ class _MyHomePageState extends State<SecondPage> {
                           children: <Widget>[
 
                             Container(
-                              height: 503.0,
+                              height: 520.0,
                               child: ListView(
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
@@ -202,32 +169,13 @@ class _MyHomePageState extends State<SecondPage> {
                         )
                     ),
 
-                    SizedBox(height: 5.0,),
+                    SizedBox(height: 15.0,),
 
-                    FloatingActionButton(
-                      backgroundColor: Colors.yellow,
-                      onPressed: (){
-                        showDialog(
-                            context:context,
-                          barrierDismissible: true,
-                          builder: (BuildContext context){
-                              return AlertDialog(
-                                content: Container(
-                                    height: 80.0,
-                                    width: 80.0,
-                                    child: Center(
-                                      child: Container(
-
-                                        child: Text('Aqui van los cursos',style: TextStyle(fontFamily: 'Raleway',fontWeight: FontWeight.w500,color: Colors.black),),
-                                      )
-                                      ,)
-                                ),
-                              );
-                          }
-                        );
-                      },
-                      child: Icon(Icons.build,color: Colors.black,size: 20.0,),
-                    )
+                    Container(
+                      height:  50.0,
+                      width: 100.0,
+                      child: Center(child : new Image.asset('gifs/kirby2.gif'),
+                    ))
 
                   ],
                 ),
@@ -238,6 +186,7 @@ class _MyHomePageState extends State<SecondPage> {
   }
 
   Widget _foodCard(String nC ,String i , var _class){
+    MINIDialogs otome = new MINIDialogs();
 
     String numberCicle = nC;
     String image = i;
@@ -250,7 +199,7 @@ class _MyHomePageState extends State<SecondPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-                padding: EdgeInsets.fromLTRB(55.0, 0.0, 15.0, 20.0),
+                padding: EdgeInsets.fromLTRB(55.0, 0.0, 15.0, 10.0),
                 child: Stack(
                   overflow: Overflow.visible,
                   children: <Widget>[
@@ -259,11 +208,15 @@ class _MyHomePageState extends State<SecondPage> {
                         debugPrint('El H fue presionado');
                         Navigator.push(context,MaterialPageRoute(builder: (context) => subClass));
                       },
+                      onLongPress: (){
+                        otome.information(context, 'Otome', Text('Otome es la besto waifu y Nanami tambien, pero las dos se agarran a vergazos en decidir cual es mejor'), '');},
 
+
+                      //Esto son los cards de los ciclos
                       child: Container(
-                        margin: EdgeInsets.only(top: 20.0),
+                        margin: EdgeInsets.only(top: 10.0),
                         width: 300.0,
-                        height: 450.0,
+                        height: 500.0,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
                             image: DecorationImage(
@@ -281,70 +234,69 @@ class _MyHomePageState extends State<SecondPage> {
                       ),
                     ),
 
-                    Positioned(
-                      top: 425.0,
-                      left: 15.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18.0),
-                            color: Colors.pinkAccent
-                        ),
-                        width: 270.0,
-                        height: 65.0,
-                        padding: EdgeInsets.all(4.0),
-                        child: Column(
+                    //Este es el cuadro de los datos del ciclo
+                      Positioned(
+                        top: 455.0,
+                        left: 15.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              color: Colors.pinkAccent
+                          ),
+                          width: 270.0,
+                          height: 65.0,
+                          padding: EdgeInsets.all(4.0),
+                          child: Column(
 
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
 
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Ciclo '+numberCicle , //CAMBIA
-                                  style: TextStyle(
-                                      fontFamily: 'Raleway',
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w600
+                              Row(
+                                children: <Widget>[
+                                  Text(
+                                    'Ciclo '+numberCicle , //CAMBIA
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w600
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 4.0),
-                                Image.asset(
-                                  'images/integral2.png',//CAMBIA
-                                  height: 20.0,
-                                  width: 20.0,
-                                ),
-                                SizedBox(width: 130.0),
-                                Text(
-                                  numberCicle, //CAMBIA
-                                  style: TextStyle(
-                                      fontFamily: 'Raleway',
-                                      fontSize: 20.0,
-                                      color: Colors.white),
-                                ),
-                              ],
-                            ),
+                                  SizedBox(width: 4.0),
+                                  Image.asset(
+                                    'images/integral2.png',//CAMBIA
+                                    height: 20.0,
+                                    width: 20.0,
+                                  ),
+                                  SizedBox(width: 130.0),
+                                  Text(
+                                    numberCicle, //CAMBIA
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        fontSize: 20.0,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
 
-                            SizedBox(height: 9.0),
+                              SizedBox(height: 9.0),
 
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Elige tu curso',
-                                  style: TextStyle(
-                                      fontFamily: 'Raleway',
-                                      fontSize: 15.0,
-                                      color: Colors.white),
-                                )
-                              ],
-                            )
+                              Row(
+                                children: <Widget>[
+                                  Text(
+                                    'Elige tu curso',
+                                    style: TextStyle(
+                                        fontFamily: 'Raleway',
+                                        fontSize: 15.0,
+                                        color: Colors.white),
+                                  )
+                                ],
+                              )
 
-                          ],
+                            ],
+                          ),
                         ),
+
                       ),
-
-                    )
-
-
                   ],
                 )),
 

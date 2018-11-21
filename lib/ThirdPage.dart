@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nciole_app3/SecondFile.dart';
+import 'package:nicole_app3/SecondFile.dart';
 import 'dart:async';
-import 'package:nciole_app3/main.dart';
+import 'package:nicole_app3/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:ui';
 
@@ -74,9 +74,8 @@ class ThirdPage extends StatelessWidget {
                     child: Container(
                       margin: EdgeInsets.fromLTRB(25.0, 320.0, 25.0, 0.0),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey.shade500.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.6),
                           borderRadius: BorderRadius.circular(20.0),
-
                       ),
 
                       child: Column(
@@ -156,7 +155,7 @@ class ThirdPage extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.fromLTRB(25.0, 420.0, 25.0, 0.0),
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey.shade500.withOpacity(0.5),
+                        color: Colors.black.withOpacity(0.6),
                           borderRadius: BorderRadius.circular(20.0),
 
                       ),

@@ -7,8 +7,10 @@ class Dialog extends StatefulWidget{
 }
 class _DialogsState extends State<Dialog>{
 
-  MINIDialogs mini = new MINIDialogs();
+  final GlobalKey<ScaffoldState> key = GlobalKey<ScaffoldState>();
 
+    //VARIABLES DE LOS WIDGETS
+  MINIDialogs mini = new MINIDialogs();
   Text data = new Text(
     '\n\nProfesor     Romano Lopez\n'
         'Dias             L-M-V\n'
@@ -19,14 +21,14 @@ class _DialogsState extends State<Dialog>{
       fontSize: 16.0,
       color: Colors.black
     ),
-  );
+  );//CONTENIDO
   Cartas cartas = new Cartas();
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-
+      key: key,
       body: new SingleChildScrollView(
         child: new Column(
           children: <Widget>[
@@ -67,8 +69,7 @@ class MINIDialogs{
                   fontSize: 20.0
               ),
             ),
-            content:
-            Container(
+            content: Container(
               height: 85.0,
               width: 85.0,
               child: content ,
@@ -78,14 +79,11 @@ class MINIDialogs{
               FlatButton(
                   onPressed: () {
 
-                    Navigator.pop(context);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Icon(Icons.favorite ,color: Colors.deepPurpleAccent,),
-                      SizedBox(width: 200.0,),
-                      Icon(Icons.keyboard_return ,color: Colors.deepPurpleAccent,)
+                      Icon(Icons.favorite ,color: Colors.black,),
                     ],
                   )
               ),
@@ -95,7 +93,7 @@ class MINIDialogs{
     );
   }
 }
-
+//DETALLES DE LAS SECCIONES
 
 class Dialogs{
 
@@ -144,7 +142,7 @@ class Dialogs{
       }
     );
   }
-}
+}//DETALLES DE CADA SECCION
 
 class Cartas{
 
@@ -168,8 +166,8 @@ class Cartas{
                   Text(' Seccion ${seccion}',
                     style: TextStyle(
                         fontFamily: 'Raleway',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20.0
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18.0
                     ),),
                   SizedBox(
                     width: 108.0,
@@ -186,4 +184,4 @@ class Cartas{
     );
   }
 
-}
+}//TODAS LAS SECCIONES
